@@ -2,7 +2,7 @@ import React from 'react';
 //import axios from 'axios';
 import './App.css';
 //import { useDispatch, useSelector } from 'react-redux';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 
 //TODO add component imports here for each page
 import Feeling from '../Feeling/Feeling';
