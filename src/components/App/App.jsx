@@ -5,6 +5,12 @@ import './App.css';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 
 //TODO add component imports here for each page
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
+import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
+import FinalPage from '../FinalPage/FinalPage';
 
 function App() {
 
@@ -16,8 +22,24 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
       </div>
+      {/* TODO add route path here can use <Route exact path="/" component={} />  */}
       <Route>
-        {/* TODO add route path and component here can use <Route exact path="/" component={} />  */}
+        <Feeling exact path="/Feeling" />
+      </Route>
+      <Route>
+        <Understanding exact path="/Understanding"/>
+      </Route>
+      <Route>
+        <Supported exact path="/Supported"/>
+      </Route>
+      <Route>
+        <Comments exact path="/Comments"/>
+      </Route>
+      <Route>
+        <Review exact path="/Review"/>
+      </Route>
+      <Route>
+        <FinalPage exact path="/FinalPage"/>
       </Route>
     </Router>
   );
