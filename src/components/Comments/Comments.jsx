@@ -1,12 +1,9 @@
-import {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-function Comments(){
+function Comments() {
 
-    //accesses redux store data
-    //const understanding = useSelector(store => store.understandingReducer);
-    //*** OR */
     //sets state/captures input data from user
     const [comments, setComments] = useState('');
 
@@ -18,29 +15,22 @@ function Comments(){
 
     const addComments = () => {
         console.log('add comments data', comments);
-        // if(comments === ''){
-        //     //TODO if time, add sweet alert
-        //     alert('If you have nothing else to say, type a.');
-        // } else {
-            dispatch({type: 'ADD_COMMENTS', payload: comments});
-            //setComments('');
-            history.push("/Review");
-            
-        
+        dispatch({ type: 'ADD_COMMENTS', payload: comments });
+        history.push("/Review");
     }
 
-    return(
+    return (
         <div>
             <h3>Please leave any additonal comments below.</h3>
-            <textarea 
-                id="comments" 
+            <textarea
+                id="comments"
                 onChange={(event) => setComments(event.target.value)}
                 rows="4"
                 cols="50"
                 name="comments"
                 form="userForm">
             </textarea>
-            <button 
+            <button
                 id="comments"
                 onClick={() => addComments()}>
                 NEXT
@@ -50,4 +40,6 @@ function Comments(){
 }
 
 export default Comments;
+
+
 

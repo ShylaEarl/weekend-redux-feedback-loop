@@ -1,6 +1,6 @@
-import {useHistory} from 'react-router';
+import { useHistory } from 'react-router';
 
-function FinalPage(){
+function FinalPage() {
 
     const history = useHistory();
 
@@ -9,7 +9,7 @@ function FinalPage(){
         history.push("/Feeling");
     }
 
-    return(
+    return (
         <div>
             <h2>Thank You!</h2>
             <button onClick={startAgain}>Click to Leave New Feedback</button>
@@ -18,3 +18,4 @@ function FinalPage(){
 }
 
 export default FinalPage;
+

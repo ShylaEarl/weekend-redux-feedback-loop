@@ -1,8 +1,8 @@
 import axios from 'axios';
-import {useDispatch, useSelector} from 'react-redux';
-import {useHistory} from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
-function Review(){
+function Review() {
 
     //accesses redux store data
     const feedbackData = useSelector(store => store);
@@ -18,19 +18,19 @@ function Review(){
     const submitData = () => {
         console.log('review submit button clicked', feedbackData);
         axios.post('/feedback', feedbackData)
-        .then((response) => {
-            console.log(response);
-            //TODO if time, add sweet alert
-            alert("Your feedback has been submitted!");
-            dispatch({type: 'CLEAR', payload: ''});
-            history.push("/FinalPage");
-        })
-        .catch((error) => {
-            console.log('error POSTing data from review', error);
-        })
+            .then((response) => {
+                console.log(response);
+                //TODO if time, add sweet alert
+                alert("Your feedback has been submitted!");
+                dispatch({ type: 'CLEAR', payload: '' });
+                history.push("/FinalPage");
+            })
+            .catch((error) => {
+                console.log('error POSTing data from review', error);
+            })
     }
 
-    return(
+    return (
         <div>
             <h3>Please Review Your Feedback.</h3>
             <p>Feelings: {feedbackData.feelingReducer}</p>
@@ -43,3 +43,4 @@ function Review(){
 }
 
 export default Review;
+

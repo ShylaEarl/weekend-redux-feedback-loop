@@ -1,10 +1,8 @@
 import React from 'react';
-//import axios from 'axios';
 import './App.css';
-//import { useDispatch, useSelector } from 'react-redux';
-import {HashRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
-//TODO add component imports here for each page
+//connecting to components for each page
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
@@ -22,7 +20,6 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
       </div>
-      {/* TODO add route path here can use <Route exact path="/" component={} />  */}
       <Route exact path="/Feeling">
         <Feeling />
       </Route>
@@ -46,3 +43,4 @@ function App() {
 }
 
 export default App;
+

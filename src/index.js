@@ -11,7 +11,7 @@ import logger from 'redux-logger';
 
 //Reducers to get/hold data from each page
 const feelingReducer = (state = 0, action) => {
-    if(action.type === 'ADD_FEELING'){
+    if (action.type === 'ADD_FEELING') {
         console.log('feeling payload', action.payload);
         return action.payload;
     } else if (action.type === 'CLEAR') {
@@ -21,7 +21,7 @@ const feelingReducer = (state = 0, action) => {
 }
 
 const understandingReducer = (state = 0, action) => {
-    if(action.type === 'ADD_UNDERSTANDING'){
+    if (action.type === 'ADD_UNDERSTANDING') {
         console.log('understanding payload', action.payload);
         return action.payload;
     } else if (action.type === 'CLEAR') {
@@ -31,7 +31,7 @@ const understandingReducer = (state = 0, action) => {
 }
 
 const supportedReducer = (state = 0, action) => {
-    if(action.type === 'ADD_SUPPORTED'){
+    if (action.type === 'ADD_SUPPORTED') {
         console.log('supported payload', action.payload);
         return action.payload;
     } else if (action.type === 'CLEAR') {
@@ -41,7 +41,7 @@ const supportedReducer = (state = 0, action) => {
 }
 
 const commentsReducer = (state = '', action) => {
-    if(action.type === 'ADD_COMMENTS'){
+    if (action.type === 'ADD_COMMENTS') {
         console.log('comments payload', action.payload);
         return action.payload;
     } else if (action.type === 'CLEAR') {
@@ -65,6 +65,6 @@ const storeInstance = createStore(
 ReactDOM.render(
     <Provider store={storeInstance}>
         <App />
-    </Provider>, 
+    </Provider>,
     document.getElementById('root'));
 registerServiceWorker();
