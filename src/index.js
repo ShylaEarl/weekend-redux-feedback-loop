@@ -14,6 +14,8 @@ const feelingReducer = (state = 0, action) => {
     if(action.type === 'ADD_FEELING'){
         console.log('feeling payload', action.payload);
         return action.payload;
+    } else if (action.type === 'CLEAR') {
+        return state = 0;
     }
     return state;
 }
@@ -22,6 +24,8 @@ const understandingReducer = (state = 0, action) => {
     if(action.type === 'ADD_UNDERSTANDING'){
         console.log('understanding payload', action.payload);
         return action.payload;
+    } else if (action.type === 'CLEAR') {
+        return state = 0;
     }
     return state;
 }
@@ -30,6 +34,8 @@ const supportedReducer = (state = 0, action) => {
     if(action.type === 'ADD_SUPPORTED'){
         console.log('supported payload', action.payload);
         return action.payload;
+    } else if (action.type === 'CLEAR') {
+        return state = 0;
     }
     return state;
 }
@@ -38,6 +44,8 @@ const commentsReducer = (state = '', action) => {
     if(action.type === 'ADD_COMMENTS'){
         console.log('comments payload', action.payload);
         return action.payload;
+    } else if (action.type === 'CLEAR') {
+        return state = '';
     }
     return state;
 }
