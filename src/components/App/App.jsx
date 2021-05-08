@@ -23,7 +23,7 @@ function App() {
         </header>
       </div>
       {/* TODO add route path here can use <Route exact path="/" component={} />  */}
-      <Route exact path="/">
+      <Route exact path="/Feeling">
         <Feeling />
       </Route>
       <Route exact path="/Understanding">
