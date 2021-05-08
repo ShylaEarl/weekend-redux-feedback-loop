@@ -25,6 +25,10 @@ function Supported() {
         }
     }
 
+    const goBack = () => {
+        history.push("/Understanding");
+    }
+
     return (
         <div className="supported">
             <h2>How well are you being supported?</h2>
@@ -36,7 +40,12 @@ function Supported() {
                 onChange={(event) => setSupported(event.target.value)}
             />
             <button
-                id="supported"
+                id="supported-back"
+                onClick={() => goBack()}>
+                BACK
+            </button>
+            <button
+                id="supported-next"
                 onClick={() => addSupported()}>
                 NEXT
             </button>

@@ -25,6 +25,10 @@ function Feeling() {
         }
     }
 
+    const goBack = () => {
+        history.push("/FinalPage");
+    }
+
     return (
         <div className="feeling">
             <h2>How are you feeling today?</h2>
@@ -33,10 +37,15 @@ function Feeling() {
             <input
                 id="feeling"
                 type="number"
-                onChange={(event) => setFeeling(event.target.value)} //onChange={addData}?? value={}??
+                onChange={(event) => setFeeling(event.target.value)}
             />
             <button
-                id="feeling"
+                id="feeling-back"
+                onClick={() => goBack()}>
+                BACK
+            </button>
+            <button
+                id="feeling-next"
                 onClick={() => addFeeling()}>
                 NEXT
             </button>

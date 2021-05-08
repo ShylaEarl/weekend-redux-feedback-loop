@@ -25,6 +25,10 @@ function Understanding() {
         }
     }
 
+    const goBack = () => {
+        history.push("/Feeling");
+    }
+
     return (
         <div className="Understanding">
             <h2>How well are you understaning the content?</h2>
@@ -33,10 +37,15 @@ function Understanding() {
             <input
                 id="understanding"
                 type="number"
-                onChange={(event) => setUnderstanding(event.target.value)} //onChange={addData}?? value={}??
+                onChange={(event) => setUnderstanding(event.target.value)}
             />
             <button
-                id="understanding"
+                id="understanding-back"
+                onClick={() => goBack()}>
+                BACK
+            </button>
+            <button
+                id="understanding-next"
                 onClick={() => addUnderstanding()}>
                 NEXT
             </button>

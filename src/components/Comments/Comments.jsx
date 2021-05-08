@@ -19,6 +19,10 @@ function Comments() {
         history.push("/Review");
     }
 
+    const goBack = () => {
+        history.push("/Supported");
+    }
+
     return (
         <div>
             <h3>Please leave any additonal comments below.</h3>
@@ -31,7 +35,12 @@ function Comments() {
                 form="userForm">
             </textarea>
             <button
-                id="comments"
+                id="comments-back"
+                onClick={() => goBack()}>
+                BACK
+            </button>
+            <button
+                id="comments-next"
                 onClick={() => addComments()}>
                 NEXT
             </button>

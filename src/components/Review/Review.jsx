@@ -30,6 +30,10 @@ function Review() {
             })
     }
 
+    const goBack = () => {
+        history.push("/Comments");
+    }
+
     return (
         <div>
             <h3>Please Review Your Feedback.</h3>
@@ -37,7 +41,16 @@ function Review() {
             <p>Understanding: {feedbackData.understandingReducer}</p>
             <p>Support: {feedbackData.supportedReducer}</p>
             <p>Comments: {feedbackData.commentsReducer}</p>
-            <button onClick={submitData}>SUBMIT</button>
+            <button
+                id="review-back"
+                onClick={() => goBack()}>
+                BACK
+            </button>
+            <button 
+                id="review-next"
+                onClick={submitData}>
+                SUBMIT
+            </button>
         </div>
     )
 }
