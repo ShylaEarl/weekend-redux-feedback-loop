@@ -26,10 +26,28 @@ const understandingReducer = (state = 0, action) => {
     return state;
 }
 
+const supportedReducer = (state = 0, action) => {
+    if(action.type === 'ADD_SUPPORTED'){
+        console.log('supported payload', action.payload);
+        return action.payload;
+    }
+    return state;
+}
+
+const commentsReducer = (state = '', action) => {
+    if(action.type === 'ADD_COMMENT'){
+        console.log('comments payload', action.payload);
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
         understandingReducer,
+        supportedReducer,
+        commentsReducer,
     }),
     applyMiddleware(logger)
 );

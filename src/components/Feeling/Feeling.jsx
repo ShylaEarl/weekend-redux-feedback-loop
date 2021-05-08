@@ -23,7 +23,7 @@ function Feeling(){
             alert('Please select a number between 0 and 5.');
         } else {
             dispatch({type: 'ADD_FEELING', payload: feeling});
-            setFeeling('');
+            //setFeeling('');
             history.push("/Understanding");
             
         }
