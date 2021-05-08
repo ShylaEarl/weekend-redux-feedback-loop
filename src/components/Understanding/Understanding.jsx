@@ -33,7 +33,7 @@ function Understanding(){
         <div className="Understanding">
             <h2>How well are you understaning the content?</h2>
             <h4>0 = WTF?!?!</h4>
-            <h4>5 = My (profitable) side hustle is teaching React. Just saying...</h4>
+            <h4>5 = My (profitable) side hustle is teaching React. Just sayin...</h4>
             <input 
                 id="understanding" 
                 type="number" 

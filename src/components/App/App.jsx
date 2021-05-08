@@ -23,23 +23,23 @@ function App() {
         </header>
       </div>
       {/* TODO add route path here can use <Route exact path="/" component={} />  */}
-      <Route>
-        <Feeling exact path="/" />
+      <Route exact path="/">
+        <Feeling />
       </Route>
-      <Route>
-        <Understanding exact path="/Understanding"/>
+      <Route exact path="/Understanding">
+        <Understanding />
       </Route>
-      <Route>
-        <Supported exact path="/Supported"/>
+      <Route exact path="/Supported">
+        <Supported />
       </Route>
-      <Route>
-        <Comments exact path="/Comments"/>
+      <Route exact path="/Comments">
+        <Comments />
       </Route>
-      <Route>
-        <Review exact path="/Review"/>
+      <Route exact path="/Review">
+        <Review />
       </Route>
-      <Route>
-        <FinalPage exact path="/FinalPage"/>
+      <Route exact path="/FinalPage">
+        <FinalPage />
       </Route>
     </Router>
   );
