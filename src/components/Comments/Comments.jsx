@@ -34,7 +34,7 @@ function Comments(){
             <h3>Please leave any additonal comments below.</h3>
             <textarea 
                 id="comments" 
-                onChange={setComments}
+                onChange={(event) => setComments(event.target.value)}
                 rows="4"
                 cols="50"
                 name="comments"
@@ -50,3 +50,4 @@ function Comments(){
 }
 
 export default Comments;
+

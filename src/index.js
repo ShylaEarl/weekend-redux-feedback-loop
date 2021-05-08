@@ -35,7 +35,7 @@ const supportedReducer = (state = 0, action) => {
 }
 
 const commentsReducer = (state = '', action) => {
-    if(action.type === 'ADD_COMMENT'){
+    if(action.type === 'ADD_COMMENTS'){
         console.log('comments payload', action.payload);
         return action.payload;
     }
