@@ -24,10 +24,10 @@ function App() {
       </div>
       {/* TODO add route path here can use <Route exact path="/" component={} />  */}
       <Route>
-        <Feeling exact path="/Feeling" />
+        <Feeling exact path="/" />
       </Route>
       <Route>
-        <Understanding exact path="/Understanding"/>
+        <Understanding path="/Understanding"/>
       </Route>
       <Route>
         <Supported exact path="/Supported"/>

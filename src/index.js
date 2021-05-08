@@ -10,13 +10,17 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //TODO add reducers here for each page
-const reducer1 = (state = [], action) => {
+const feelingReducer = (state = 0, action) => {
+    if(action.type === 'ADD_FEELING'){
+        console.log('feeling payload', action.payload);
+        return action.payload;
+    }
     return state;
 }
 
 const storeInstance = createStore(
     combineReducers({
-        reducer1
+        feelingReducer,
     }),
     applyMiddleware(logger)
 );
