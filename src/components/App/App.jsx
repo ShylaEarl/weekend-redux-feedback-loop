@@ -27,7 +27,7 @@ function App() {
         <Feeling exact path="/" />
       </Route>
       <Route>
-        <Understanding path="/Understanding"/>
+        <Understanding exact path="/Understanding"/>
       </Route>
       <Route>
         <Supported exact path="/Supported"/>
