@@ -9,7 +9,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-//TODO add reducers here for each page
+//Reducers to get/hold data from each page
 const feelingReducer = (state = 0, action) => {
     if(action.type === 'ADD_FEELING'){
         console.log('feeling payload', action.payload);
@@ -42,6 +42,7 @@ const commentsReducer = (state = '', action) => {
     return state;
 }
 
+//store to hold all application data
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
@@ -52,6 +53,7 @@ const storeInstance = createStore(
     applyMiddleware(logger)
 );
 
+//Provider allows redux and react to talk to each other
 ReactDOM.render(
     <Provider store={storeInstance}>
         <App />
