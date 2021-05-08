@@ -20,8 +20,10 @@ function Review() {
         axios.post('/feedback', feedbackData)
             .then((response) => {
                 console.log(response);
-                //TODO if time, add sweet alert
-                alert("Your feedback has been submitted!");
+                swal({
+                    text: "Your feedback has been submitted!",
+                    icon: "success"
+                });
                 dispatch({ type: 'CLEAR', payload: '' });
                 history.push("/FinalPage");
             })

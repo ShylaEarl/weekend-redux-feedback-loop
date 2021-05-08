@@ -16,8 +16,12 @@ function Feeling() {
     const addFeeling = () => {
         console.log('add feeling data', feeling);
         if (feeling === '' || feeling < 0 || feeling > 5) {
-            //TODO if time, add sweet alert
-            alert('Please select a number between 0 and 5.');
+            swal({
+                text: 'Please select a number between 0 and 5.',
+                buttons: {
+                    ok: true,
+                }
+            }).then(() => setFeeling('')); //TODO if time, how do I capture the click event?
         } else {
             dispatch({ type: 'ADD_FEELING', payload: feeling });
             history.push("/Understanding");

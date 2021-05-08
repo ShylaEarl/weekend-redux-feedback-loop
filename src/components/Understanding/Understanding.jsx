@@ -16,8 +16,16 @@ function Understanding() {
     const addUnderstanding = () => {
         console.log('add understanding data', understanding);
         if (understanding === '' || understanding < 0 || understanding > 5) {
-            //TODO if time, add sweet alert
-            alert('Please select a number between 0 and 5.');
+            swal({
+                text: 'Please select a number between 0 and 5.',
+                buttons: {
+                    ok: true,
+                }
+            }).then(val => { //TODO if time get this functional
+                if(val){
+                    setFeeling('');
+                }
+            });
         } else {
             dispatch({ type: 'ADD_UNDERSTANDING', payload: understanding });
             history.push("/Supported");

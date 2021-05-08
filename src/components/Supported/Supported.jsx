@@ -16,8 +16,16 @@ function Supported() {
     const addSupported = () => {
         console.log('add supported data', supported);
         if (supported === '' || supported < 0 || supported > 5) {
-            //TODO if time, add sweet alert
-            alert('Please select a number between 0 and 5.');
+            swal({
+                text: 'Please select a number between 0 and 5.',
+                buttons: {
+                    ok: true,
+                }
+            }).then(val => { //TODO if time get this functional
+                if(val){
+                    setFeeling('');
+                }
+            });
         } else {
             dispatch({ type: 'ADD_SUPPORTED', payload: supported });
             history.push("/Comments");
