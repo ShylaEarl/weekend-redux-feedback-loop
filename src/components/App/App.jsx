@@ -10,6 +10,7 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import FinalPage from '../FinalPage/FinalPage';
 import Admin from '../Admin/Admin';
+import Home from '../Home/Home';
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
       </div>
+      <Route exact path="/">
+        <Home />
+      </Route>
       <Route exact path="/Feeling">
         <Feeling />
       </Route>

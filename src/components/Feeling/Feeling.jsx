@@ -32,7 +32,7 @@ function Feeling() {
 
     //route to previous page
     const goBack = () => {
-        history.push("/FinalPage");
+        history.push("/");
     }
 
     return (
