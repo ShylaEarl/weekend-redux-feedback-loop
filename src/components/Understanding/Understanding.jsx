@@ -23,7 +23,7 @@ function Understanding() {
                 }
             }).then(val => { //TODO if time get this functional
                 if(val){
-                    setFeeling('');
+                    setUnderstanding('');
                 }
             });
         } else {
