@@ -9,7 +9,7 @@ function Home() {
     }
 
     return(
-        <div>
+        <div className="card">
             <h2>Hello Friend!</h2>
             <h3>We are interested to learn about your expereience.</h3>
             <button onClick={() => startSurvey()}>Start Survey</button>
