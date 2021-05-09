@@ -8,7 +8,7 @@ Fullstack Redux Feedback Loop
 
 Duration: Weekend Challenge
 
-This project allows a user to provide experience feedback reguarding their feelings, understanding, support recieved, and any comments they want to share. Feedback is stored in a database and reviewable on the admin page. (***Edit this if you don't get to the admin page code***)
+This project allows a user to provide experience feedback reguarding their feelings, understanding, support recieved, and any comments they want to share. Feedback is stored in a database and reviewable on the admin page.
 
 ## Prerequisites
 
@@ -28,8 +28,6 @@ This project allows a user to provide experience feedback reguarding their feeli
 
 ## Usage
 
-(***Edit this section if you add back buttons, and an admin page***)
-
 To use this application:
 
 1. The user can add a number from 0-5 indicating how they feel, how well they understood the material, and how supported they feel. 
@@ -37,6 +35,8 @@ To use this application:
 3. The user clicks another next button and is brought to a review page where they can review their feedback.
 4. The user then clicks a submit button to add their response to a database.
 5. There is a final page which allows the user to restart the survey if they wish too.
+6. On each page there is a back button which allows the user to go back at anytime and change their response.
+7. There is also a separate admin page accessible at '/admin' which stores all feedback response for review. 
 
 ## Built With
 
@@ -46,7 +46,7 @@ Node
 Postgresql
 React
 Redux
-Material UI (***Edit this if I don't get to styling***)
+Material UI 
 
 ## Acknowledgement
 

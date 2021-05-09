@@ -7,6 +7,7 @@ const theme = createMuiTheme({
     root: {
         margin: '2rem',
     },
+    //creates theme override for colors
     palette: {
         primary: {
             light: '#e5ffff',
