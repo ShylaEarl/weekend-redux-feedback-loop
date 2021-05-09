@@ -9,6 +9,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import FinalPage from '../FinalPage/FinalPage';
+import Admin from '../Admin/Admin';
 
 function App() {
 
@@ -37,6 +38,9 @@ function App() {
       </Route>
       <Route exact path="/FinalPage">
         <FinalPage />
+      </Route>
+      <Route exact path="/Admin">
+        <Admin />
       </Route>
     </Router>
   );

@@ -21,10 +21,8 @@ function Supported() {
                 buttons: {
                     ok: true,
                 }
-            }).then(val => { //TODO if time get this functional
-                if(val){
-                    setFeeling('');
-                }
+            }).then(() => { //TODO if time get this functional
+                setSupported('');
             });
         } else {
             dispatch({ type: 'ADD_SUPPORTED', payload: supported });

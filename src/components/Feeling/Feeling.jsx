@@ -13,6 +13,7 @@ function Feeling() {
     //advances to the next page
     const history = useHistory();
 
+    //input validation, dispatch to redux store, route to next page
     const addFeeling = () => {
         console.log('add feeling data', feeling);
         if (feeling === '' || feeling < 0 || feeling > 5) {
@@ -29,6 +30,7 @@ function Feeling() {
         }
     }
 
+    //route to previous page
     const goBack = () => {
         history.push("/FinalPage");
     }

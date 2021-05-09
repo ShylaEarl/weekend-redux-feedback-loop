@@ -2,6 +2,19 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
+//GET feedback from DB, add to admin page
+router.get('/', (req, res) => {
+  //get all feedback entries from DB
+  pool.query('SELECT * FROM "feedback" ORDER BY "id" DESC;')
+  .then((response) => {
+    res.send(response.rows);
+  })
+  .catch((error) => {
+    console.log('error in GET', error);
+    res.sendStatus(500);
+  });
+})
+
 //POST new feedback to the server/DB
 router.post('/', (req, res) => {
   let newFeedback = req.body;
