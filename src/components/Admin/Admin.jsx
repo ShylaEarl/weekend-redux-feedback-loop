@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import './Admin.css';
 
 function Admin(){
 
@@ -64,7 +65,7 @@ function Admin(){
 
     return(
         <div>
-            <h2>Feedback Results!</h2>
+            <h2 id="admin-h2">Feedback Results!</h2>
             <table>
                 <thead>
                     <tr>

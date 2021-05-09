@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Button, Typography, Input } from '@material-ui/core';
 
 function Feeling() {
 
@@ -13,7 +14,7 @@ function Feeling() {
     //advances to the next page
     const history = useHistory();
 
-    //input validation, dispatch to redux store, route to next page
+    //input validation, dispatch state to redux store, route to next page
     const addFeeling = () => {
         console.log('add feeling data', feeling);
         if (feeling === '' || feeling < 0 || feeling > 5) {
@@ -22,7 +23,7 @@ function Feeling() {
                 buttons: {
                     ok: true,
                 }
-            }).then(() => setFeeling('')); //TODO if time, how do I capture the click event?
+            }).then(() => setFeeling('')); //TODO if time, how do I capture this click event?
         } else {
             dispatch({ type: 'ADD_FEELING', payload: feeling });
             history.push("/Understanding");
@@ -36,25 +37,29 @@ function Feeling() {
     }
 
     return (
-        <div className="feeling">
-            <h2>How are you feeling today?</h2>
-            <h4>0 = Down in the Dumps...</h4>
-            <h4>5 = Spectacular!</h4>
-            <input
-                id="feeling"
+        <div className="card">
+            <Typography variant="h4" color="primary">How are you feeling today?</Typography>
+            <Typography variant="h5" >0 = Down in the Dumps...</Typography>
+            <Typography variant="h5" >5 = Spectacular!</Typography>
+            <Input
+                className="feedback-input"
                 type="number"
                 onChange={(event) => setFeeling(event.target.value)}
             />
-            <button
+            <Button
+                variant="outlined"
+                color="secondary"
                 id="feeling-back"
                 onClick={() => goBack()}>
                 BACK
-            </button>
-            <button
+            </Button>
+            <Button
+                variant="contained"
+                color="secondary"
                 id="feeling-next"
                 onClick={() => addFeeling()}>
                 NEXT
-            </button>
+            </Button>
         </div>
     )
 }

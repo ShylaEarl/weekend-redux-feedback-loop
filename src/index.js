@@ -9,6 +9,10 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+// MUI theme provider
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './theme';
+
 //Reducers to get/hold data from each page
 const feelingReducer = (state = 0, action) => {
     if (action.type === 'ADD_FEELING') {
@@ -71,8 +75,10 @@ const storeInstance = createStore(
 
 //Provider allows redux and react to talk to each other
 ReactDOM.render(
+    <ThemeProvider theme={theme}>...
     <Provider store={storeInstance}>
         <App />
-    </Provider>,
+    </Provider>
+    </ThemeProvider>,
     document.getElementById('root'));
 registerServiceWorker();
