@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 //GET feedback from DB, add to admin page
 router.get('/', (req, res) => {
   //get all feedback entries from DB
-  pool.query('SELECT * FROM "feedback";')
+  pool.query('SELECT * FROM "feedback" ORDER BY "id" DESC;')
   .then((response) => {
     res.send(response.rows);
   })

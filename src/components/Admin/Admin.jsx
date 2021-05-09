@@ -11,8 +11,9 @@ function Admin(){
     //sets local state
     const [feedback, setFeedback] = useState([]);
 
+    //GET request from feedback from DB
     const getFeedback = () => {
-        axios.get('/getfeedback') //this may just be '/' or '/feedback'
+        axios.get('/getFeedback')
         .then((response) => {
             setFeedback(response.data);
         })
@@ -21,28 +22,41 @@ function Admin(){
         });
     }
 
+    //DELETE request 
+    const deleteFeedback = () => {
+        console.log('in delete request');
+        //TODO write axios request, swal to confirm delete
+    }
+
     return(
         <div>
-            <h2>Hello?</h2>
+            <h2>Feedback Results!</h2>
             <table>
                 <thead>
                     <tr>
                         <td>Feeling</td>
-                        <td>Understanding</td>
-                        <td>Supported</td>
+                        <td>Comprehension</td>
+                        <td>Support</td>
                         <td>Comments</td>
+                        <td>Delete</td>
                     </tr>
                 </thead>
                 <tbody>
-                    {feedback.map((item, id) =>
-                        <tr key={id}>
-                            <td>{feedback.feeling}</td>
-                            <td>{feedback.understanding}</td>
-                            <td>{feedback.supported}</td>
-                            <td>{feedback.comments}</td>
-                        </tr>
-                    )}
+                    {feedback.map(item => {
+                        return(
+                            <tr key={item.id}>
+                                <td>{item.feeling}</td>
+                                <td>{item.understanding}</td>
+                                <td>{item.support}</td>
+                                <td>{item.comments}</td>
+                                <td><button onClick={deleteFeedback}>DELETE</button></td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
+                <tfoot>
+                    <tr></tr>
+                </tfoot>
             </table>
         </div>
     )
