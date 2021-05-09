@@ -15,6 +15,8 @@ const feedbackRouter = require('./routes/feedback.router.js');
 app.use('/feedback', feedbackRouter);
 //GET
 app.use('/getFeedback', feedbackRouter);
+//DELETE
+app.use('/deleteFeedback/:id', feedbackRouter) //do I need :id here?
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
