@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { Button, Typography } from '@material-ui/core';
 
 function Review() {
 
@@ -37,22 +38,24 @@ function Review() {
     }
 
     return (
-        <div>
-            <h3>Please Review Your Feedback.</h3>
+        <div className="card">
+            <Typography variant="h4">Please Review Your Feedback.</Typography>
             <p>Feelings: {feedbackData.feelingReducer}</p>
             <p>Understanding: {feedbackData.understandingReducer}</p>
             <p>Support: {feedbackData.supportedReducer}</p>
             <p>Comments: {feedbackData.commentsReducer}</p>
-            <button
-                id="review-back"
+            <Button
+                variant="outlined"
+                color="secondary"
                 onClick={() => goBack()}>
                 BACK
-            </button>
-            <button 
-                id="review-next"
+            </Button>
+            <Button
+                variant="contained"
+                color="secondary"
                 onClick={submitData}>
                 SUBMIT
-            </button>
+            </Button>
         </div>
     )
 }

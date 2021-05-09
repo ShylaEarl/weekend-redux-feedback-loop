@@ -76,9 +76,9 @@ const storeInstance = createStore(
 //Provider allows redux and react to talk to each other
 ReactDOM.render(
     <ThemeProvider theme={theme}>...
-    <Provider store={storeInstance}>
-        <App />
-    </Provider>
+        <Provider store={storeInstance}>
+            <App />
+        </Provider>
     </ThemeProvider>,
     document.getElementById('root'));
 registerServiceWorker();

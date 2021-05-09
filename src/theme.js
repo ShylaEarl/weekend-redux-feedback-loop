@@ -2,6 +2,11 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 
 const theme = createMuiTheme({
+    //Trying to figure out margin and padding spacing in MUI
+    spacing: 8,
+    root: {
+        margin: '2rem',
+    },
     palette: {
         primary: {
             light: '#e5ffff',
@@ -13,15 +18,8 @@ const theme = createMuiTheme({
             main: '#FF6666',
             dark: '#ff9999',
         },
-        tertiary: {
-            light: '#efdcd5',
-            main: '#725b53',
-            dark: '#8c7b75',
-        }
+        tertiary: purple,
     },
-    status: {
-        danger: 'red',
-    }
 });
 
 export default theme;

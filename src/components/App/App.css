@@ -10,6 +10,7 @@ body{
   background-color: #b2ebf2;
   min-height: 70px;
   padding: 20px;
+  font-family: Roboto;
   color: #fafafa;
   text-shadow: 2px 2px #725b53;
   margin-bottom: 20px;
@@ -23,15 +24,24 @@ body{
   font-size: large;
 }
 
+h2 {
+  padding-bottom: 2rem;
+}
+
 h4 {
   font-style: italic;
+  padding: 1rem;
+}
+
+h5 {
+  padding-bottom: 1rem;
 }
 
 .card{
   margin: auto;
   margin-top: 5rem;
   height: 20rem;
-  width: 40rem;
+  width: 60rem;
   border: 1px solid salmon;
   border-radius: 10px;
   text-align: center;
@@ -39,10 +49,11 @@ h4 {
   background-color: white;
 }
 
-/* .feedback-input{
-  padding-right: 25px;
-  padding-bottom: 7px;
-  margin: .5rem;
-} */
+textarea{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 
 

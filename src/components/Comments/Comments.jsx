@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Button, Typography } from '@material-ui/core';
 
 function Comments() {
 
@@ -24,8 +25,8 @@ function Comments() {
     }
 
     return (
-        <div>
-            <h3>Please leave any additonal comments below.</h3>
+        <div className="card">
+            <Typography variant="h4">What else would you like us to know?</Typography>
             <textarea
                 id="comments"
                 onChange={(event) => setComments(event.target.value)}
@@ -34,16 +35,18 @@ function Comments() {
                 name="comments"
                 form="userForm">
             </textarea>
-            <button
-                id="comments-back"
+            <Button
+                variant="outlined"
+                color="secondary"
                 onClick={() => goBack()}>
                 BACK
-            </button>
-            <button
-                id="comments-next"
+            </Button>
+            <Button
+                variant="contained"
+                color="secondary"
                 onClick={() => addComments()}>
                 NEXT
-            </button>
+            </Button>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Button, Typography, Input } from '@material-ui/core';
 
 function Understanding() {
 
@@ -22,7 +23,7 @@ function Understanding() {
                     ok: true,
                 }
             }).then(val => { //TODO if time get this functional
-                if(val){
+                if (val) {
                     setUnderstanding('');
                 }
             });
@@ -38,28 +39,33 @@ function Understanding() {
     }
 
     return (
-        <div className="Understanding">
-            <h2>How well are you understaning the content?</h2>
-            <h4>0 = WTF?!?!</h4>
-            <h4>5 = My (profitable) side hustle is teaching React. Just sayin...</h4>
-            <input
-                id="understanding"
+        <div className="card">
+            <Typography variant="h4">How well do you understand the content?</Typography>
+            <Typography variant="h5">0 = WTF?!?!</Typography>
+            <Typography variant="h5">5 = My (profitable) side hustle is teaching React. Just sayin...</Typography>
+            <Input
                 type="number"
                 onChange={(event) => setUnderstanding(event.target.value)}
             />
-            <button
-                id="understanding-back"
+            <Button
+                variant="outlined"
+                color="secondary"
                 onClick={() => goBack()}>
                 BACK
-            </button>
-            <button
-                id="understanding-next"
+            </Button>
+            <Button
+                variant="contained"
+                color="secondary"
                 onClick={() => addUnderstanding()}>
                 NEXT
-            </button>
+            </Button>
         </div>
     )
 }
 
 export default Understanding;
+
+
+
+
 

@@ -38,25 +38,22 @@ function Feeling() {
 
     return (
         <div className="card">
-            <Typography variant="h4" color="primary">How are you feeling today?</Typography>
-            <Typography variant="h5" >0 = Down in the Dumps...</Typography>
-            <Typography variant="h5" >5 = Spectacular!</Typography>
+            <Typography variant="h4">How are you feeling today?</Typography>
+            <Typography variant="h5">0 = Down in the Dumps...</Typography>
+            <Typography variant="h5">5 = Spectacular!</Typography>
             <Input
-                className="feedback-input"
                 type="number"
                 onChange={(event) => setFeeling(event.target.value)}
             />
             <Button
                 variant="outlined"
                 color="secondary"
-                id="feeling-back"
                 onClick={() => goBack()}>
                 BACK
             </Button>
             <Button
                 variant="contained"
                 color="secondary"
-                id="feeling-next"
                 onClick={() => addFeeling()}>
                 NEXT
             </Button>
@@ -65,4 +62,6 @@ function Feeling() {
 }
 
 export default Feeling;
+
+
 

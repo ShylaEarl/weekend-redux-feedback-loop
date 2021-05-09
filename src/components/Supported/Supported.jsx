@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Button, Typography, Input } from '@material-ui/core';
 
 function Supported() {
 
@@ -36,25 +37,26 @@ function Supported() {
     }
 
     return (
-        <div className="supported">
-            <h2>How well are you being supported?</h2>
-            <h4>0 = I'm adrift in a turbulent sea with nothing solid in sight.</h4>
-            <h4>5 = I'm surrounded by helpful, kind, compassionate folks who hold it down.</h4>
-            <input
-                id="supported"
+        <div className="card">
+            <Typography variant="h4">How well are you being supported?</Typography>
+            <Typography variant="h5">0 = I'm adrift in a turbulent sea with nothing solid in sight.</Typography>
+            <Typography variant="h5">5 = I'm surrounded by kind, helpful, compassionate folks who hold it down.</Typography>
+            <Input
                 type="number"
                 onChange={(event) => setSupported(event.target.value)}
             />
-            <button
-                id="supported-back"
+            <Button
+                variant="outlined"
+                color="secondary"
                 onClick={() => goBack()}>
                 BACK
-            </button>
-            <button
-                id="supported-next"
+            </Button>
+            <Button
+                variant="contained"
+                color="secondary"
                 onClick={() => addSupported()}>
                 NEXT
-            </button>
+            </Button>
         </div>
     )
 }

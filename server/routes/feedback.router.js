@@ -8,13 +8,13 @@ router.delete('/:id', (req, res) => {
   console.log('in DELETE', req.params.id);
   let sqlString = 'DELETE FROM "feedback" WHERE "id"=$1;';
   pool.query(sqlString, [req.params.id])
-  .then((response) => {
-    res.sendStatus(200);
-  })
-  .catch((error) => {
-    console.log('error in DELETE', error);
-    res.sendStatus(500);
-  });
+    .then((response) => {
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log('error in DELETE', error);
+      res.sendStatus(500);
+    });
 })
 
 //GET feedback from DB, add to admin page
@@ -22,13 +22,13 @@ router.get('/', (req, res) => {
   //get all feedback entries from DB
   let sqlString = 'SELECT * FROM "feedback" ORDER BY "id" DESC;';
   pool.query(sqlString)
-  .then((response) => {
-    res.send(response.rows);
-  })
-  .catch((error) => {
-    console.log('error in GET', error);
-    res.sendStatus(500);
-  });
+    .then((response) => {
+      res.send(response.rows);
+    })
+    .catch((error) => {
+      console.log('error in GET', error);
+      res.sendStatus(500);
+    });
 })
 
 //POST new feedback to the server/DB
@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
 
   //TODO add sweet alert here if time and include client side validation for comments so you can add comment validation here too
   //server side validation (Thanks for the pro tip Edan!)
-  if(!newFeedback.feelingReducer || !newFeedback.understandingReducer || !newFeedback.supportedReducer){
+  if (!newFeedback.feelingReducer || !newFeedback.understandingReducer || !newFeedback.supportedReducer) {
     res.status(400).send({
       message: 'Hi friend! You forgot something. Would you kindly double check your feedback?'
     });

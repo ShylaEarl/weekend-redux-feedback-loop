@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router';
+import { Button, Typography } from '@material-ui/core';
 
 function FinalPage() {
 
@@ -10,9 +11,14 @@ function FinalPage() {
     }
 
     return (
-        <div>
-            <h2>Thank You!</h2>
-            <button onClick={startAgain}>Click to Leave New Feedback</button>
+        <div className="card">
+            <Typography variant="h2">Thank You!</Typography>
+            <Button
+                variant="contained"
+                color="secondary"
+                onClick={startAgain}>
+                Click to Leave New Feedback
+            </Button>
         </div>
     )
 }

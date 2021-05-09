@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import { Button, Typography } from '@material-ui/core';
 
 function Home() {
 
@@ -8,13 +9,18 @@ function Home() {
         history.push("/Feeling");
     }
 
-    return(
+    return (
         <div className="card">
-            <h2>Hello Friend!</h2>
-            <h3>We are interested to learn about your expereience.</h3>
-            <button onClick={() => startSurvey()}>Start Survey</button>
+            <Typography variant="h4">Hello Friend!</Typography>
+            <Typography variant="h5">We are excited to learn about your expereience.</Typography>
+            <Button
+                variant="contained"
+                color="secondary"
+                onClick={() => startSurvey()}>
+                Start Survey
+            </Button>
         </div>
     )
-} 
+}
 
 export default Home;
