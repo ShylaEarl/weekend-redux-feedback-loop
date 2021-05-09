@@ -2,10 +2,26 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
+//DELETE feedback from DB, admin page
+// '/:id' OR '/{id}'
+router.delete('/:id', (req, res) => {
+  console.log('in DELETE', req.params.id);
+  let sqlString = 'DELETE FROM "feedback" WHERE "id"=$1;';
+  pool.query(sqlString, [req.params.id])
+  .then((response) => {
+    res.sendStatus(200);
+  })
+  .catch((error) => {
+    console.log('error in DELETE', error);
+    res.sendStatus(500);
+  });
+})
+
 //GET feedback from DB, add to admin page
 router.get('/', (req, res) => {
   //get all feedback entries from DB
-  pool.query('SELECT * FROM "feedback" ORDER BY "id" DESC;')
+  let sqlString = 'SELECT * FROM "feedback" ORDER BY "id" DESC;';
+  pool.query(sqlString)
   .then((response) => {
     res.send(response.rows);
   })
