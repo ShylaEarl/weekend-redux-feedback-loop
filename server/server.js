@@ -11,12 +11,7 @@ app.use(express.static('build'));
 /** ---------- EXPRESS ROUTES ---------- **/
 const feedbackRouter = require('./routes/feedback.router.js');
 
-//POST
 app.use('/feedback', feedbackRouter);
-//GET
-app.use('/getFeedback', feedbackRouter);
-//DELETE
-app.use('/deleteFeedback/:id', feedbackRouter) //do I need different urls here?
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

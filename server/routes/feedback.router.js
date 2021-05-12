@@ -3,7 +3,6 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 //DELETE feedback from DB, admin page
-// '/:id' OR '/{id}'
 router.delete('/:id', (req, res) => {
   console.log('in DELETE', req.params.id);
   let sqlString = 'DELETE FROM "feedback" WHERE "id"=$1;';
