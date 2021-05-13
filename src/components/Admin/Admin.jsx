@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import './Admin.css';
 
@@ -24,18 +23,13 @@ function Admin() {
             });
     }
 
-    
-    const store = useSelector((store) => store);
-
-    //TODO - figure out id param and routing piece
     //DELETE request 
     const deleteFeedback = (id) => {
         console.log('in delete request', id);
 
-        axios.delete(`/feedback/${id}`) // or '/deleteFeedback/:id' or '/feedback'
+        axios.delete(`/feedback/${id}`)
             .then((response) => {
                 console.log('delete request', response);
-                //dispatch({type: 'DELETE'});
                 getFeedback();
             })
             .catch((error) => {
@@ -43,7 +37,7 @@ function Admin() {
             })
     }
 
-    //TODO swal to confirm delete
+    //Sweet Alert confirms desire to delete
     const deleteFeedbackHandler = (id) => {
         swal({
             title: "Hello!",
@@ -57,7 +51,7 @@ function Admin() {
                 swal({
                     text: "You've deleted your feedback.",
                 });
-                deleteFeedback(id); //add id params as argument? or click event  event.target.value?
+                deleteFeedback(id); 
             }
         });
     }

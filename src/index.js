@@ -54,13 +54,6 @@ const commentsReducer = (state = '', action) => {
     return state;
 }
 
-//May not need this, trying to get Delete button functional
-//check out redux-edit-example code
-const deleteReducer = (state = {}, action) => {
-
-    return state;
-}
-
 //store to hold all application data
 const storeInstance = createStore(
     combineReducers({
@@ -68,7 +61,6 @@ const storeInstance = createStore(
         understandingReducer,
         supportedReducer,
         commentsReducer,
-        deleteReducer,
     }),
     applyMiddleware(logger)
 );

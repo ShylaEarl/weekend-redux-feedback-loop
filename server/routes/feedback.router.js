@@ -35,8 +35,7 @@ router.post('/', (req, res) => {
   let newFeedback = req.body;
   console.log(`new feedback`, newFeedback);
 
-  //TODO add sweet alert here if time and include client side validation for comments so you can add comment validation here too
-  //server side validation (Thanks for the pro tip Edan!)
+  //Server side validation 
   if (!newFeedback.feelingReducer || !newFeedback.understandingReducer || !newFeedback.supportedReducer) {
     res.status(400).send({
       message: 'Hi friend! You forgot something. Would you kindly double check your feedback?'

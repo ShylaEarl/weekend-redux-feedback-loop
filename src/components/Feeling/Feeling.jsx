@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, Typography, Input } from '@material-ui/core';
+import { Button, Typography, Input, Box } from '@material-ui/core';
 
 function Feeling() {
 
@@ -45,18 +45,22 @@ function Feeling() {
                 type="number"
                 onChange={(event) => setFeeling(event.target.value)}
             />
-            <Button
-                variant="outlined"
-                color="secondary"
-                onClick={() => goBack()}>
-                BACK
-            </Button>
+            <Box m={2}>
             <Button
                 variant="contained"
                 color="secondary"
                 onClick={() => addFeeling()}>
                 NEXT
             </Button>
+            </Box>
+            <Box m={2}>
+            <Button
+                variant="outlined"
+                color="secondary"
+                onClick={() => goBack()}>
+                BACK
+            </Button>
+            </Box>
         </div>
     )
 }
